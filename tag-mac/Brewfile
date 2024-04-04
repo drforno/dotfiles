@@ -72,6 +72,9 @@ brew "wireguard-tools"
 brew "x264"
 brew "xvid"
 brew "zlib"
+brew "kubernetes-cli
+
+
 cask "daisydisk"
 cask "docker"
 cask "fig"
@@ -83,38 +86,37 @@ cask "paw"
 cask "vagrant"
 cask "visual-studio-code"
 cask "vlc"
-brew install --cask kind
-brew install --cask dotnet-sdk
-brew install --cask headlamp
-brew install kubernetes-cli
-brew install --cask microsoft-remote-desktop
-brew install --cask postman
-brew install --cask spotify
-brew install --cask whatsapp
-brew install --cask notion
-brew install --cask postman
-brew install --cask telegram
-brew install --cask skype
-brew install --cask microsoft-teams
-brew install --cask webex
-brew install --cask dropbox
-brew install --cask paragon-ntfs
-brew install --cask gimp
-brew install --cask disk-inventory-x
-brew install --cask steam
-brew install --cask ledger-live
-brew install --cask calibre
-brew install --cask azure-data-studio
-brew install --cask fork
-brew install --cask sourcetree
-brew install --cask logi-options-plus
-brew install --cask nosqlbooster-for-mongodb
-brew install --cask opera
-brew install --cask termius
-brew install --cask teamviewer
-brew install --cask virtualbox
-brew install --cask zoom
-brew install --cask wireshark
+cask "kind"
+cask "dotnet-sdk"
+cask "headlamp"
+cask "microsoft-remote-desktop"
+cask "postman"
+cask "spotify"
+cask "whatsapp"
+cask "notion"
+cask "postman"
+cask "telegram"
+cask "skype"
+cask "microsoft-teams"
+cask "webex"
+cask "dropbox"
+cask "paragon-ntfs"
+cask "gimp"
+cask "disk-inventory-x"
+cask "steam"
+cask "ledger-live"
+cask "calibre"
+cask "azure-data-studio"
+cask "fork"
+cask "sourcetree"
+cask "logi-options-plus"
+cask "nosqlbooster-for-mongodb"
+cask "opera"
+cask "termius"
+cask "teamviewer"
+cask "virtualbox"
+cask "zoom"
+cask "wireshark"
 
 mas "The Unarchiver", id: 425424353
 mas "Amphetamine", id: 937984704
