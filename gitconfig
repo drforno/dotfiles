@@ -1,0 +1,49 @@
+[user]
+	name = Massimo Fornari
+	email = drforno@gmail.com
+	quotepath = false
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color]
+	ui = true
+[color "branch"]
+	current = yellow black
+	local = yellow
+	remote = magenta
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red reverse
+	new = green reverse
+	whitespace = white reverse
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan reverse
+	branch = magenta
+[core]
+	editor = code --wait
+	excludesfile = /Users/massimofornari/.gitignore_global
+[interactive]
+	diffFilter = delta --color-only
+[credential]
+	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[branch]
+	autosetuprebase = always
+[pager]
+    diff = delta
+    show = delta
+    log = delta
+    blame = delta
+    reflog = delta
+[init]
+	defaultBranch = main
+[push]
+	default = simple
+	followTags = true
+[delta]
+	side-by-side = true
