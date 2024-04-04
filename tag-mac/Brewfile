@@ -72,7 +72,7 @@ brew "wireguard-tools"
 brew "x264"
 brew "xvid"
 brew "zlib"
-brew "kubernetes-cli
+brew "kubernetes-cli"
 
 
 cask "daisydisk"
