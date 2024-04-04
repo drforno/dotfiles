@@ -55,19 +55,6 @@ fi
 fancy_echo "Updating Homebrew formulas ..."
 brew update
 brew_tap 'homebrew/bundle'
-brew_install_or_upgrade 'fish'
-
-case "$SHELL" in
-  */fish) : ;;
-  *)
-    fancy_echo "Changing your shell to fish ..."
-      if ! grep -q fish /etc/shells; then
-        # shellcheck disable=SC2005
-        echo "$(which fish)" | sudo tee -a /etc/shells
-      fi
-      sudo chsh -s "$(which fish)" "$USER"
-    ;;
-esac
 
 if ! command -v rcup >/dev/null; then
   brew_tap 'thoughtbot/formulae'
@@ -87,9 +74,20 @@ env "RCRC=$HOME/.dotfiles/rcrc" rcup -t mac -t fish -t ssh -t tmux -t vim
 fancy_echo "Installing bundle"
 brew bundle install --file "$HOME/.Brewfile"
 
-if ! test -d "$HOME/.local/share/omf/"; then
-  fancy_echo "Installing oh-my-fish"
-  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-  omf i bobthefish
-  omf i bass
+if ! test -d "$HOME/.oh-my-zsh/"; then
+  fancy_echo "Installing oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+  # Define the theme you want to set
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+
+  # Check if the ZSH_THEME setting already exists in ~/.zshrc
+  if ! grep -q "^ZSH_THEME=" ~/.zshrc; then
+      # Append the ZSH_THEME setting to ~/.zshrc if it does not exist
+      echo "ZSH_THEME=\"$ZSH_THEME\"" >> ~/.zshrc
+  else
+      # Replace the existing ZSH_THEME setting in ~/.zshrc
+      sed -i.bak "s/^ZSH_THEME=.*/ZSH_THEME=\"$ZSH_THEME\"/" ~/.zshrc
+  fi
 fi
